@@ -1,17 +1,21 @@
 $(document).ready(function() {
     
-    //Generates a random number for score to reach
+    //Generates a random number for score to reach 
+
     var targetNumber = Math.floor(Math.random() * 102 + 19);
 
     //Sends random number to DOM
+
     $("#reach").text(targetNumber);
     
     //Creates variables for the scoreboard
+
     var wins = 0;
     var losses = 0;
     var yourScore = 0;
 
     //Send variable scores to scoreboard
+    
     $("#wins").text(wins);
     $("#losses").text(losses);
     $("#actualScore").text(yourScore);
