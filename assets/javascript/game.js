@@ -3,7 +3,6 @@ $(document).ready(function() {
     var targetNumber = Math.floor(Math.random() * 102 + 19);
 
     $("#reach").text(targetNumber);
-    console.log(targetNumber)
     
     var wins = 0;
     var losses = 0;
@@ -12,16 +11,35 @@ $(document).ready(function() {
     $("#wins").text(wins);
     $("#losses").text(losses);
     $("#actualScore").text(yourScore);
+   
+    function reset(){
+
+        targetNumber = Math.floor(Math.random() * 102 + 19);
+        $("#reach").text(targetNumber);
+
+        yourScore = 0;
+        $("#actualScore").text(yourScore);
+
+        numBlue = Math.floor(Math.random() * 12 + 1);
+        numRed = Math.floor(Math.random() * 12 + 1);
+        numGreen = Math.floor(Math.random() * 12 + 1);
+        numYellow = Math.floor(Math.random() * 12 + 1);
+    }
 
     function winner(){
+
         wins++;
         $("#wins").text(wins);
+        reset();
     }
 
     function loser(){
+
         losses++;
         $("#losses").text(losses);
+        reset();
     }
+
 
     var numBlue = Math.floor(Math.random() * 12 + 1);
     var numRed = Math.floor(Math.random() * 12 + 1);
